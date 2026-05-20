@@ -106,7 +106,8 @@ function doPost(e) {
    - Click **Go to [Project Name] (unsafe)**
    - Click **Allow**
 6. Copy the **Web app URL** that appears - you'll need this!
-
+https://script.google.com/macros/s/AKfycbyXw2Ms_uidqWhVma3ip-f9ZogrRjrXEWDHPDZ01B9xiRSmVheFmTo5wFcqx1G8AgNQ/exec
+AKfycbyXw2Ms_uidqWhVma3ip-f9ZogrRjrXEWDHPDZ01B9xiRSmVheFmTo5wFcqx1G8AgNQ
 ## Step 4: Update Your Website
 
 1. Open the file `src/components/RSVPForm.jsx`
