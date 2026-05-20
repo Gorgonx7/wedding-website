@@ -92,23 +92,32 @@ The built files will be in the `dist/` folder, ready to deploy.
 
 ## Deployment Options
 
-### Netlify
+**This project is pre-configured with GitHub Actions for automatic deployment!**
+
+### Option 1: GitHub Pages (Recommended)
+
+1. Update `public/CNAME` with your domain
+2. Push to GitHub
+3. Enable GitHub Pages in repo settings (Source: GitHub Actions)
+4. Configure DNS (see GITHUB_PAGES_SETUP.md)
+5. Done! Automatic deployment on every push to `main`
+
+**Quick Start:** [DEPLOYMENT_QUICK_START.md](./DEPLOYMENT_QUICK_START.md)
+**Full Guide:** [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md)
+
+### Option 2: Netlify
 1. Push your code to GitHub
 2. Connect your repo to Netlify
 3. Build command: `npm run build`
 4. Publish directory: `dist`
 
-### Vercel
+### Option 3: Vercel
 ```bash
 npm i -g vercel
 vercel
 ```
 
-### GitHub Pages
-```bash
-npm run build
-# Then deploy the dist folder to GitHub Pages
-```
+For all deployment options and troubleshooting, see [DEPLOYMENT.md](./DEPLOYMENT.md).
 
 ## Project Structure
 

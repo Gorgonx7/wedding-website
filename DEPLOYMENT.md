@@ -105,62 +105,50 @@ This guide covers three popular hosting options for your wedding website. All ar
 
 ---
 
-## Option 3: GitHub Pages
+## Option 3: GitHub Pages with GitHub Actions (Recommended for GitHub Users)
 
 ### Why GitHub Pages?
 - Free hosting if you're already using GitHub
-- Easy to set up
-- Good for simple static sites
+- Automatic CI/CD with GitHub Actions
+- Custom domain support with free HTTPS
+- No manual deployment needed
 
-### Steps:
+### Quick Start:
 
-1. **Install gh-pages**:
+This project is pre-configured with GitHub Actions for automatic deployment!
+
+1. **Push your code to GitHub**:
    ```bash
-   npm install --save-dev gh-pages
-   ```
-
-2. **Update package.json**:
+   git init
+   git add .
+   git commit -m "Initial commit
    
-   Add a homepage field at the top level:
-   ```json
-   "homepage": "https://yourusername.github.io/wedding-website",
-   ```
-   
-   Add deploy scripts:
-   ```json
-   "scripts": {
-     "dev": "vite",
-     "build": "vite build",
-     "preview": "vite preview",
-     "predeploy": "npm run build",
-     "deploy": "gh-pages -d dist"
-   }
+   Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+   git branch -M main
+   git remote add origin <your-github-repo-url>
+   git push -u origin main
    ```
 
-3. **Update vite.config.js**:
-   ```javascript
-   import { defineConfig } from 'vite'
-   import react from '@vitejs/plugin-react'
+2. **Enable GitHub Pages**:
+   - Go to your repo → Settings → Pages
+   - Source: Select "GitHub Actions"
+   - Done! The workflow will automatically deploy
 
-   export default defineConfig({
-     plugins: [react()],
-     base: '/wedding-website/'  // Replace with your repo name
-   })
-   ```
+3. **Configure Custom Domain** (optional but recommended):
+   - Edit `public/CNAME` with your domain
+   - See detailed instructions in `GITHUB_PAGES_SETUP.md`
 
-4. **Deploy**:
-   ```bash
-   npm run deploy
-   ```
+### Full Documentation
 
-5. **Enable GitHub Pages**:
-   - Go to your repo on GitHub
-   - Settings → Pages
-   - Source: Deploy from a branch
-   - Branch: gh-pages → /root
-   - Save
+For complete setup instructions including:
+- Custom domain configuration
+- DNS setup (A records and CNAME)
+- Troubleshooting
+- HTTPS configuration
 
-Your site will be at: `https://yourusername.github.io/wedding-website`
+**See: [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md)**
+
+Your site deploys automatically on every push to `main`!
 
 ---
 
