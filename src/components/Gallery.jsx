@@ -24,11 +24,6 @@ function Gallery() {
       src: '/poland2.jpg', 
       alt: 'Christmas in Poland',
       caption: 'Christmas in Poland where we\'re in our Christmas jumpers' 
-    },
-    { 
-      src: '/edinborough.jpg', 
-      alt: 'Edinburgh botanical garden',
-      caption: 'The botanical garden in Edinburgh, a special place for us' 
     }
   ];
 
