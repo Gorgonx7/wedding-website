@@ -35,18 +35,21 @@ function RSVPForm() {
 			newErrors.surname = 'Surname is required';
 		}
 
-		if (!formData.email.trim()) {
-			newErrors.email = 'Email is required';
-		} else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-			newErrors.email = 'Please enter a valid email address';
-		}
-
-		if (!formData.phone.trim()) {
-			newErrors.phone = 'Phone number is required';
-		}
-
 		if (!formData.attending) {
 			newErrors.attending = 'Please select whether you will be attending';
+		}
+
+		// Only validate email and phone if attending
+		if (formData.attending === 'yes' || formData.attending === 'evening') {
+			if (!formData.email.trim()) {
+				newErrors.email = 'Email is required';
+			} else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+				newErrors.email = 'Please enter a valid email address';
+			}
+
+			if (!formData.phone.trim()) {
+				newErrors.phone = 'Phone number is required';
+			}
 		}
 
 		setErrors(newErrors);
@@ -211,43 +214,6 @@ function RSVPForm() {
 					</div>
 
 					<div className="form-group">
-						<label htmlFor="email">
-							Email <span className="required">*</span>
-						</label>
-						<input
-							type="email"
-							id="email"
-							name="email"
-							value={formData.email}
-							onChange={handleChange}
-							className={errors.email ? 'error' : ''}
-							required
-						/>
-						{errors.email && (
-							<span className="error-message">{errors.email}</span>
-						)}
-					</div>
-
-					<div className="form-group">
-						<label htmlFor="phone">
-							Phone Number <span className="required">*</span>
-						</label>
-						<input
-							type="tel"
-							id="phone"
-							name="phone"
-							value={formData.phone}
-							onChange={handleChange}
-							className={errors.phone ? 'error' : ''}
-							placeholder="e.g., 07123 456789"
-							required
-						/>
-						{errors.phone && (
-							<span className="error-message">{errors.phone}</span>
-						)}
-					</div>
-
-					<div className="form-group">
 						<label htmlFor="attending">
 							Will you be attending? <span className="required">*</span>
 						</label>
@@ -268,6 +234,45 @@ function RSVPForm() {
 							<span className="error-message">{errors.attending}</span>
 						)}
 					</div>
+
+					{(formData.attending === 'yes' || formData.attending === 'evening') && (
+						<>
+							<div className="form-group">
+								<label htmlFor="email">
+									Email <span className="required">*</span>
+								</label>
+								<input
+									type="email"
+									id="email"
+									name="email"
+									value={formData.email}
+									onChange={handleChange}
+									className={errors.email ? 'error' : ''}
+									required
+								/>
+								{errors.email && (
+									<span className="error-message">{errors.email}</span>
+								)}
+							</div>
+
+							<div className="form-group">
+								<label htmlFor="phone">
+									Phone Number <span className="required">*</span>
+								</label>
+								<input
+									type="tel"
+									id="phone"
+									name="phone"
+									value={formData.phone}
+									onChange={handleChange}
+									className={errors.phone ? 'error' : ''}
+									placeholder="e.g., 07123 456789"
+									required
+								/>
+								{errors.phone && (
+									<span className="error-message">{errors.phone}</span>
+								)}
+							</div>
 
 					<div className="form-group checkbox-group">
 						<label className="checkbox-label">
@@ -482,6 +487,8 @@ function RSVPForm() {
 							placeholder="Suggest a song for the reception"
 						/>
 					</div>
+						</>
+					)}
 
 					<div className="form-group checkbox-group">
 						<label className="checkbox-label">
