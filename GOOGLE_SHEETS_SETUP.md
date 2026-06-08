@@ -49,8 +49,11 @@ function doPost(e) {
     if (data.additionalGuests && data.additionalGuests.length > 0) {
       additionalGuestsText = data.additionalGuests.map(function(guest, index) {
         var guestInfo = (index + 1) + '. ' + guest.firstName + ' ' + guest.surname;
+        if (guest.ageCategory) {
+          guestInfo += ' (' + guest.ageCategory + ')';
+        }
         if (guest.dietaryRequirements) {
-          guestInfo += ' (Dietary: ' + guest.dietaryRequirements + ')';
+          guestInfo += ' [Dietary: ' + guest.dietaryRequirements + ']';
         }
         if (guest.flower) {
           guestInfo += ' [Flower: ' + guest.flower + ']';

@@ -86,6 +86,7 @@ function RSVPForm() {
 		setAdditionalGuests([...additionalGuests, {
 			firstName: '',
 			surname: '',
+			ageCategory: 'adult',
 			dietaryRequirements: '',
 			flower: ''
 		}]);
@@ -441,6 +442,20 @@ function RSVPForm() {
 											placeholder="Surname"
 										/>
 									</div>
+								</div>
+
+								<div className="form-group">
+									<label htmlFor={`guest-age-category-${index}`}>
+										Age Category
+									</label>
+									<select
+										id={`guest-age-category-${index}`}
+										value={guest.ageCategory}
+										onChange={(e) => handleGuestChange(index, 'ageCategory', e.target.value)}
+									>
+										<option value="adult">Adult</option>
+										<option value="child">Child</option>
+									</select>
 								</div>
 
 								<div className="form-group">
