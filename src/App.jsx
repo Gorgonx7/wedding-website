@@ -1,16 +1,23 @@
 import Banner from './components/Banner';
 import Information from './components/Information';
-import Gallery from './components/Gallery';
+import Timeline from './components/Timeline';
+import LocationMaps from './components/LocationMaps';
 import RSVPForm from './components/RSVPForm';
+import Privacy from './components/Privacy';
 import './App.css';
 
 function App() {
   return (
-    <div className="app">
+    <div className="app" id="top">
       <Banner />
       <Information />
-      <Gallery />
+      <Timeline />
+      <LocationMaps />
       <RSVPForm />
+      <div id="privacy">
+        <Privacy />
+      </div>
+      <div className="bottombar-separator"></div>
     </div>
   );
 }

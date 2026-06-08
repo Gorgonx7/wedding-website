@@ -4,13 +4,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   font-weight: 400;
   
   color: #333;
-  background-color: #ffffff;
+  background-color: rgb(243, 235, 220);
   
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,8 +26,30 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: rgb(243, 235, 220);
+  /* Prevent text size adjustment on orientation change */
+  -webkit-text-size-adjust: 100%;
+  /* Improve touch scrolling */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure all links and buttons have minimum touch targets on mobile */
+@media (max-width: 768px) {
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Improve tap highlight for mobile */
+  a, button, input, select, textarea {
+    -webkit-tap-highlight-color: rgba(139, 69, 19, 0.2);
+  }
 }
 
 #root {
   min-height: 100vh;
+  background-color: rgb(243, 235, 220);
 }

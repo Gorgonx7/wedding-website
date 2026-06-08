@@ -1,71 +1,130 @@
 .information {
   padding: 4rem 2rem;
-  background-color: #ffffff;
+  background-color: rgb(243, 235, 220);
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.section-title {
-  text-align: center;
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  margin: 0 0 3rem 0;
-  text-transform: uppercase;
-  font-family: 'Georgia', serif;
-  color: #333;
-}
-
-.info-content {
+/* Two Column Layout */
+.two-column-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  margin-top: 2rem;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: start;
 }
 
-.info-block {
-  text-align: center;
+/* Left Column Styles */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
-.info-block h3 {
-  font-size: 1.2rem;
+.info-section {
+  text-align: left;
+}
+
+.info-section h3 {
+  font-size: 1.5rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 0 0 1rem 0;
-  color: #666;
+  color: #333;
+  font-family: 'Georgia', serif;
 }
 
-.info-block p {
+.info-section h4 {
   font-size: 1.1rem;
-  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 1.5rem 0 0.75rem 0;
+  color: #555;
+}
+
+.info-section p {
+  font-size: 1rem;
+  line-height: 1.7;
   color: #555;
   margin: 0.5rem 0;
 }
 
-.venue-name {
-  font-weight: 500;
+.info-section strong {
   color: #333;
-  font-size: 1.3rem !important;
-  margin-bottom: 0.75rem !important;
+  font-weight: 500;
 }
 
-.venue-address {
-  color: #666;
-  font-size: 1rem !important;
+.important-note {
+  display: block;
+  margin-top: 0.5rem;
+  color: #8B4513;
+  font-style: italic;
 }
 
-.date-info {
-  font-size: 1.3rem !important;
+/* Lists */
+.hotel-list,
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.hotel-list li {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-left: 3px solid #ddd;
+  line-height: 1.6;
+}
+
+.price-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+  color: #555;
+}
+
+.price-list li:last-child {
+  border-bottom: none;
+}
+
+/* Download Link */
+.download-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #333;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
   font-weight: 500;
-  color: #333;
+  transition: background-color 0.3s;
+  margin-top: 0.5rem;
+  /* Ensure minimum touch target size */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-link:hover {
+  background-color: #555;
+}
+
+/* Contact Section */
+.contact-section {
+  border-top: 1px solid #ddd;
+  padding-top: 2rem;
+  text-align: center;
 }
 
 .contact-info {
-  margin-top: 1rem !important;
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
 }
 
 .contact-info a {
@@ -80,12 +139,134 @@
   text-decoration: underline;
 }
 
+/* External links */
+.info-section a[target="_blank"] {
+  color: #333;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.info-section a[target="_blank"]:hover {
+  color: #666;
+}
+
+/* Right Column - Image Stack */
+.right-column {
+  position: sticky;
+  top: 2rem;
+}
+
+.image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stacked-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stacked-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Layout */
+@media (max-width: 968px) {
+  .two-column-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .right-column {
+    position: static;
+    order: -1; /* Show images first on mobile */
+  }
+  
+  .image-stack {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .stacked-image {
+    width: calc(50% - 0.5rem);
+  }
+}
+
 @media (max-width: 768px) {
   .information {
     padding: 3rem 1.5rem;
   }
   
-  .info-content {
+  .left-column {
     gap: 2rem;
+  }
+  
+  .image-stack {
+    flex-direction: column;
+  }
+  
+  .stacked-image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .information {
+    padding: 2rem 1rem;
+  }
+  
+  .info-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .info-section h4 {
+    font-size: 1rem;
+  }
+  
+  .hotel-list li {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  /* Optimize download link for mobile */
+  .download-link {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    min-height: 48px;
+    font-size: 0.95rem;
+  }
+
+  /* Ensure external links are easily tappable */
+  .info-section a[target="_blank"] {
+    display: inline-block;
+    padding: 0.25rem 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 375px) {
+  .information {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .info-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .info-section p {
+    font-size: 0.95rem;
+  }
+
+  .hotel-list li {
+    padding: 0.65rem;
+    font-size: 0.9rem;
   }
 }

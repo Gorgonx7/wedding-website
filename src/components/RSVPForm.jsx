@@ -9,6 +9,11 @@ function RSVPForm() {
 		phone: '',
 		attending: '',
 		venueStay: false,
+		wantsBreakfast: false,
+		roomChoice1: '',
+		roomChoice2: '',
+		roomChoice3: '',
+		requiresMultipleRooms: false,
 		flower: '',
 		dietaryRequirements: '',
 		songSuggestion: ''
@@ -50,10 +55,24 @@ function RSVPForm() {
 
 	const handleChange = (e) => {
 		const { name, value, type, checked } = e.target;
-		setFormData(prev => ({
-			...prev,
-			[name]: type === 'checkbox' ? checked : value
-		}));
+		
+		// If unchecking venueStay, clear accommodation fields
+		if (name === 'venueStay' && !checked) {
+			setFormData(prev => ({
+				...prev,
+				[name]: false,
+				wantsBreakfast: false,
+				roomChoice1: '',
+				roomChoice2: '',
+				roomChoice3: '',
+				requiresMultipleRooms: false
+			}));
+		} else {
+			setFormData(prev => ({
+				...prev,
+				[name]: type === 'checkbox' ? checked : value
+			}));
+		}
 
 		if (errors[name]) {
 			setErrors(prev => ({ ...prev, [name]: '' }));
@@ -113,6 +132,11 @@ function RSVPForm() {
 				phone: '',
 				attending: '',
 				venueStay: false,
+				wantsBreakfast: false,
+				roomChoice1: '',
+				roomChoice2: '',
+				roomChoice3: '',
+				requiresMultipleRooms: false,
 				flower: '',
 				dietaryRequirements: '',
 				songSuggestion: ''
@@ -130,6 +154,20 @@ function RSVPForm() {
 		<section className="rsvp-form-section">
 			<div className="container">
 				<h2 className="section-title">RSVP</h2>
+
+				<div className="contact-info-section">
+					<p className="contact-info-intro">If you have any questions, please contact:</p>
+					<div className="contacts">
+						<div className="contact-item">
+							<span className="contact-name">James Gordon</span>
+							<a href="tel:07950742403" className="contact-phone">07950 742403</a>
+						</div>
+						<div className="contact-item">
+							<span className="contact-name">Renatta Olejarz</span>
+							<a href="tel:+48783191264" className="contact-phone">+48 783 191 264</a>
+						</div>
+					</div>
+				</div>
 
 				<form onSubmit={handleSubmit} className="rsvp-form" noValidate>
 					<h3 className="form-section-title">Main Contact</h3>
@@ -242,6 +280,82 @@ function RSVPForm() {
 							<span>I would like to stay at the venue</span>
 						</label>
 					</div>
+
+					{formData.venueStay && (
+						<div className="accommodation-section">
+							<h3 className="form-section-title">Accommodation Preferences</h3>
+							
+							<div className="form-group checkbox-group">
+								<label className="checkbox-label">
+									<input
+										type="checkbox"
+										name="wantsBreakfast"
+										checked={formData.wantsBreakfast}
+										onChange={handleChange}
+									/>
+									<span>I would like breakfast</span>
+								</label>
+							</div>
+
+							<div className="form-group">
+								<label>Room Preferences</label>
+								<p className="field-instruction">
+									Please enter your top 3 room choices from the room list provided in the venue information section above.
+								</p>
+								
+								<div className="room-choices">
+									<div className="form-group">
+										<label htmlFor="roomChoice1">First Choice</label>
+										<input
+											type="text"
+											id="roomChoice1"
+											name="roomChoice1"
+											value={formData.roomChoice1}
+											onChange={handleChange}
+											placeholder="Enter room name"
+										/>
+									</div>
+
+									<div className="form-group">
+										<label htmlFor="roomChoice2">Second Choice</label>
+										<input
+											type="text"
+											id="roomChoice2"
+											name="roomChoice2"
+											value={formData.roomChoice2}
+											onChange={handleChange}
+											placeholder="Enter room name"
+										/>
+									</div>
+
+									<div className="form-group">
+										<label htmlFor="roomChoice3">Third Choice</label>
+										<input
+											type="text"
+											id="roomChoice3"
+											name="roomChoice3"
+											value={formData.roomChoice3}
+											onChange={handleChange}
+											placeholder="Enter room name"
+										/>
+									</div>
+								</div>
+							</div>
+
+							<div className="form-group checkbox-group">
+								<label className="checkbox-label">
+									<input
+										type="checkbox"
+										name="requiresMultipleRooms"
+										checked={formData.requiresMultipleRooms}
+										onChange={handleChange}
+									/>
+									<span>I require more than one room</span>
+								</label>
+								<p className="field-note">If checked, we will contact you to discuss your requirements.</p>
+							</div>
+						</div>
+					)}
 
 					<div className="form-group">
 						<label htmlFor="flower">
@@ -367,6 +481,35 @@ function RSVPForm() {
 							onChange={handleChange}
 							placeholder="Suggest a song for the reception"
 						/>
+					</div>
+
+					<div className="form-group checkbox-group">
+						<label className="checkbox-label">
+							<input
+								type="checkbox"
+								required
+							/>
+							<span>
+								I agree to the collection and use of my personal information as described in the{' '}
+								<a 
+									href="#privacy" 
+									style={{color: '#333', textDecoration: 'underline', cursor: 'pointer'}}
+									onClick={(e) => {
+										e.preventDefault();
+										document.getElementById('privacy')?.scrollIntoView({ behavior: 'smooth' });
+										// Small delay to let scroll finish, then click the button if it's not expanded
+										setTimeout(() => {
+											const privacyButton = document.querySelector('.privacy-toggle');
+											if (privacyButton && privacyButton.getAttribute('aria-expanded') === 'false') {
+												privacyButton.click();
+											}
+										}, 500);
+									}}
+								>
+									Privacy Statement
+								</a>
+							</span>
+						</label>
 					</div>
 
 					<button

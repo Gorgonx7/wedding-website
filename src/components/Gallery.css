@@ -167,9 +167,14 @@
     max-height: 70vh;
   }
   
+  /* Ensure close button is easily tappable */
   .lightbox-close {
     top: -40px;
     font-size: 2.5rem;
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    min-height: 56px;
   }
   
   .lightbox-caption {
@@ -211,6 +216,47 @@
   .gallery-item:nth-child(4),
   .gallery-item:nth-child(5) {
     grid-column: span 1;
+  }
+
+  /* Show captions on mobile without hover */
+  .gallery-caption {
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.75) 80%, transparent 100%);
+    padding: 1.5rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    padding: 2.5rem 1rem;
+  }
+
+  .lightbox-close {
+    top: -35px;
+    font-size: 2.25rem;
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
+  }
+
+  .lightbox-caption {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .gallery-caption p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .gallery {
+    padding: 2rem 0.75rem;
+  }
+
+  .gallery-grid {
+    gap: 0.75rem;
   }
 }
 
