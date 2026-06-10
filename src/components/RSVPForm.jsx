@@ -312,6 +312,9 @@ function RSVPForm() {
 								<p className="field-instruction">
 									Please enter your top 3 room choices from the room list provided in the venue information section above.
 								</p>
+								<p className="field-instruction">
+									* Please note Newbolt, Bonita Suite and Lord Byron's are unavailable.
+								</p>
 								
 								<div className="room-choices">
 									<div className="form-group">
