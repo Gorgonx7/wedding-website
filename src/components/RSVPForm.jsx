@@ -232,7 +232,7 @@ function RSVPForm() {
 						>
 							<option value="">Please select...</option>
 							<option value="yes">I will be attending</option>
-							<option value="evening">I will be attending the evening only</option>
+							<option value="evening">I'm only able to attend the evening</option>
 							<option value="no">I won't be attending</option>
 						</select>
 						{errors.attending && (
