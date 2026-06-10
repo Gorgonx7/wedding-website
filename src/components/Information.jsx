@@ -184,9 +184,9 @@ function Information() {
           
           <div className="right-column">
             <div className="image-stack">
-              <img src="/poland1.jpg" alt="Poland" className="stacked-image" />
-              <img src="/edinburgher.jpg" alt="Edinburgh" className="stacked-image" />
               <img src="/poland2.jpg" alt="Poland" className="stacked-image" />
+              <img src="/edinburgher.jpg" alt="Edinburgh" className="stacked-image" />
+              <img src="/poland1.jpg" alt="Poland" className="stacked-image" />
             </div>
           </div>
         </div>
