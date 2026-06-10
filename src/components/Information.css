@@ -114,6 +114,19 @@
   background-color: #555;
 }
 
+/* Keep button-style external links white (overrides the plain external-link rule) */
+.info-section a.download-link[target="_blank"],
+.info-section a.download-link[target="_blank"]:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Match the room price PDF and website link boxes to the same size */
+.info-section a.download-link {
+  width: 300px;
+  max-width: 100%;
+}
+
 /* Contact Section */
 .contact-section {
   border-top: 1px solid #ddd;

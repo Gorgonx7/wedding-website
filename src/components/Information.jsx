@@ -48,8 +48,7 @@ function Information() {
               
               <h4>Bar Information</h4>
               <p>
-                The bar accepts payment by <strong>cash or card</strong>. Bar tabs can be arranged by the wedding couple. 
-                Bar opening hours are agreed with the couple.
+                The bar accepts payment by <strong>cash or card</strong>.
               </p>
               
               <h4>Suggested Hotels</h4>
@@ -102,14 +101,7 @@ function Information() {
             {/* Pricing Section */}
             <div className="info-section">
               <h3>Pricing Information</h3>
-              
-              <h4>Bar Prices</h4>
-              <p>
-                <a href="/bar-prices.pdf" className="download-link" download>
-                  Download Bar Price List (PDF)
-                </a>
-              </p>
-              
+
               <h4>Room Prices</h4>
               <p>
                 <a href="/room-prices.pdf" className="download-link" download>
