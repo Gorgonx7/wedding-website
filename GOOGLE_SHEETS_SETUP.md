@@ -20,11 +20,13 @@ This guide will help you set up Google Sheets to receive RSVP form submissions f
    - I1: Room Choice 1
    - J1: Room Choice 2
    - K1: Room Choice 3
-   - L1: Requires Multiple Rooms
-   - M1: Flower Preference
-   - N1: Dietary Requirements
-   - O1: Additional Guests
-   - P1: Song Suggestion
+   - L1: Requires Accessible Room
+   - M1: Requires Multiple Rooms
+   - N1: Flower Preference
+   - O1: Dietary Requirements
+   - P1: Additional Guests
+   - Q1: Song Suggestion
+   - R1: Additional Notes
 
 ## Step 2: Create the Google Apps Script
 
@@ -74,11 +76,13 @@ function doPost(e) {
       data.roomChoice1 || '',
       data.roomChoice2 || '',
       data.roomChoice3 || '',
+      data.requiresAccessibleRoom ? 'Yes' : 'No',
       data.requiresMultipleRooms ? 'Yes' : 'No',
       data.flower || '',
       data.dietaryRequirements || '',
       additionalGuestsText,
-      data.songSuggestion || ''
+      data.songSuggestion || '',
+      data.additionalNotes || ''
     ];
     
     // Append the row to the sheet

@@ -13,10 +13,12 @@ function RSVPForm() {
 		roomChoice1: '',
 		roomChoice2: '',
 		roomChoice3: '',
+		requiresAccessibleRoom: false,
 		requiresMultipleRooms: false,
 		flower: '',
 		dietaryRequirements: '',
-		songSuggestion: ''
+		songSuggestion: '',
+		additionalNotes: ''
 	});
 
 	const [additionalGuests, setAdditionalGuests] = useState([]);
@@ -68,6 +70,7 @@ function RSVPForm() {
 				roomChoice1: '',
 				roomChoice2: '',
 				roomChoice3: '',
+				requiresAccessibleRoom: false,
 				requiresMultipleRooms: false
 			}));
 		} else {
@@ -140,10 +143,12 @@ function RSVPForm() {
 				roomChoice1: '',
 				roomChoice2: '',
 				roomChoice3: '',
+				requiresAccessibleRoom: false,
 				requiresMultipleRooms: false,
 				flower: '',
 				dietaryRequirements: '',
-				songSuggestion: ''
+				songSuggestion: '',
+				additionalNotes: ''
 			});
 			setAdditionalGuests([]);
 		} catch (error) {
@@ -352,6 +357,18 @@ function RSVPForm() {
 								<label className="checkbox-label">
 									<input
 										type="checkbox"
+										name="requiresAccessibleRoom"
+										checked={formData.requiresAccessibleRoom}
+										onChange={handleChange}
+									/>
+									<span>I require an accessible room</span>
+								</label>
+							</div>
+
+							<div className="form-group checkbox-group">
+								<label className="checkbox-label">
+									<input
+										type="checkbox"
 										name="requiresMultipleRooms"
 										checked={formData.requiresMultipleRooms}
 										onChange={handleChange}
@@ -501,6 +518,20 @@ function RSVPForm() {
 							onChange={handleChange}
 							placeholder="Suggest a song for the reception"
 						/>
+					</div>
+
+					<div className="form-group">
+						<label htmlFor="additionalNotes">
+							Additional Notes
+						</label>
+						<textarea
+							id="additionalNotes"
+							name="additionalNotes"
+							value={formData.additionalNotes}
+							onChange={handleChange}
+							rows="4"
+							placeholder="Any other information we need to know about?"
+						></textarea>
 					</div>
 						</>
 					)}
