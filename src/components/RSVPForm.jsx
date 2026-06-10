@@ -313,8 +313,19 @@ function RSVPForm() {
 									Please enter your top 3 room choices from the room list provided in the venue information section above.
 								</p>
 								<p className="field-instruction">
-									* Please note Newbolt, Bonita Suite and Lord Byron's are unavailable.
+									* Please note the first floor rooms in the main house are unavailable:
 								</p>
+								<ul className="field-instruction">
+									<li>The Bonita Suite</li>
+									<li>Newbolt</li>
+									<li>Oriel</li>
+									<li>Coronation</li>
+									<li>Lord Byron's</li>
+									<li>Little Rose</li>
+									<li>Guest Room 1</li>
+									<li>Vine</li>
+									<li>Elmhay</li>
+								</ul>
 								
 								<div className="room-choices">
 									<div className="form-group">
