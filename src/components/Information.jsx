@@ -116,6 +116,11 @@ function Information() {
                   Download Room Price List (PDF)
                 </a>
               </p>
+              <p>
+                <a href="https://www.orchardleigh.net/orchardleigh-house-bedrooms" className="download-link" target="_blank" rel="noopener noreferrer">
+                  View Orchardleigh House Bedrooms
+                </a>
+              </p>
             </div>
 
             {/* Travel Section */}
