@@ -4,7 +4,7 @@ function Timeline() {
   const events = [
     {
       id: 1,
-      time: '11:00 AM',
+      time: '12:00 PM',
       title: 'Guest Arrival',
       description: 'Please arrive at Orchardleigh House and make your way to the ceremony location'
     },
