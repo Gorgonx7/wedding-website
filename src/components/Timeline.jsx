@@ -28,7 +28,7 @@ function Timeline() {
     },
     {
       id: 5,
-      time: '7:30 PM',
+      time: '7:30 PM - 4:00 AM',
       title: 'Evening Reception',
       description: 'Cake cutting, first dance, and evening entertainment begins'
     }

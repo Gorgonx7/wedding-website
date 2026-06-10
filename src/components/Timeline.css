@@ -17,6 +17,8 @@
 .timeline-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -29,8 +31,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  flex: 1;
-  min-width: 200px;
+  flex: 0 1 240px;
 }
 
 .timeline-box:hover {
@@ -44,6 +45,7 @@
   color: #8B4513;
   letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
+  white-space: nowrap;
 }
 
 .timeline-title {
@@ -72,6 +74,7 @@
   .timeline-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     gap: 1rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;

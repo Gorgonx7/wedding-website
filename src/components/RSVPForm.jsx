@@ -171,8 +171,16 @@ function RSVPForm() {
 							<a href="tel:07950742403" className="contact-phone">07950 742403</a>
 						</div>
 						<div className="contact-item">
+							<span className="contact-name">Anna Olejarz</span>
+							<a href="tel:07450675550" className="contact-phone">07450 675550</a>
+						</div>
+						<div className="contact-item">
 							<span className="contact-name">Renatta Olejarz</span>
 							<a href="tel:+48783191264" className="contact-phone">+48 783 191 264</a>
+						</div>
+						<div className="contact-item">
+							<span className="contact-name">Julie Gordon</span>
+							<a href="tel:07939518451" className="contact-phone">07939 518451</a>
 						</div>
 					</div>
 				</div>

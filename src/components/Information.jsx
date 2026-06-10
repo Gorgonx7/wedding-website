@@ -10,14 +10,15 @@ function Information() {
             <div className="info-section">
               <h3>The Day Before & Day Of</h3>
               <p>
-                <strong>The Day Before:</strong> Join us for a meal at <em>The Peacock Restaurant</em>. 
-                If you'd like to attend, please let the bride or groom know. 
+                <strong>The Day Before:</strong> Join us for a meal at <em>The Peacock Restaurant</em>.
+                <strong>If you would like to attend</strong>, please fill out the RSVP form at the bottom of the page.
                 <strong className="important-note">Please note: it is not possible to stay at the venue the night before, 
                 so please seek alternative accommodation.</strong>
               </p>
               <p>
-                <strong>Wedding Day:</strong> Please arrive at <strong>12:00 PM</strong>. 
+                <strong>Wedding Day:</strong> Please arrive at <strong>12:00 PM</strong>.
                 The ceremony will begin at <strong>1:00 PM</strong> at <em>St Mary's Orchardleigh</em>.
+                The wedding will end at <strong>4:00 AM</strong>.
               </p>
             </div>
 
@@ -25,7 +26,8 @@ function Information() {
             <div className="info-section">
               <h3>Accommodation</h3>
               <p>
-                Guests are welcome to stay at <strong>Orchardleigh Estate</strong> on the wedding night. 
+                Guests are welcome to stay at <strong>Orchardleigh Estate</strong> on the wedding night.
+                There is enough room at Orchardleigh for everyone to stay.
                 A detailed price list is available for download below.
               </p>
               
@@ -56,43 +58,36 @@ function Information() {
                 <li>
                   <strong>George Hotel & Granary</strong><br />
                   Frome, BA11 1AF<br />
-                  <a href="tel:01373462584">01373 462584</a><br />
                   Distance from venue: 2.1 miles
                 </li>
                 <li>
                   <strong>Eden Vale Farm</strong><br />
                   BA11 6SN<br />
-                  <a href="tel:01373830371">01373 830371</a><br />
                   Distance from venue: 3.4 miles
                 </li>
                 <li>
                   <strong>Old Parsonage House</strong><br />
                   BA11 6TG<br />
-                  <a href="tel:01373830775">01373 830775</a><br />
                   Distance from venue: 3.5 miles
                 </li>
                 <li>
                   <strong>The Woolpack</strong><br />
                   BA11 6SP<br />
-                  <a href="tel:01373831244">01373 831244</a><br />
                   Distance from venue: 3.7 miles
                 </li>
                 <li>
                   <strong>The George Inn</strong><br />
                   Nunney, BA11 4LW<br />
-                  <a href="tel:01373836458">01373 836458</a><br />
                   Distance from venue: 5.5 miles
                 </li>
                 <li>
                   <strong>Premier Inn Frome</strong><br />
                   Frome, BA11 2LD<br />
-                  <a href="tel:03337777269">0333 777 7269</a><br />
                   Distance from venue: 5.8 miles
                 </li>
                 <li>
                   <strong>Homewood</strong><br />
                   Freshford, BA2 7TB<br />
-                  <a href="tel:01225580439">01225 580439</a><br />
                   Distance from venue: 6.2 miles
                 </li>
               </ul>
@@ -183,23 +178,6 @@ function Information() {
               <p>
                 You are welcome to drop off your luggage at the front of the house, but please then park in the <strong>overflow car park</strong> which is 
                 100m past the house (first turning on the right). This ensures the front of the house remains clear for wedding transport and photographs.
-              </p>
-            </div>
-
-            {/* Contact Info */}
-            <div className="info-section contact-section">
-              <h3>Contact Information</h3>
-              <p className="contact-info">
-                <strong>For more information:</strong><br />
-                <a href="tel:07950742403">07950 742403</a>
-              </p>
-              <p className="contact-info">
-                <strong>Peacock Restaurant</strong> (for dining the night before):<br />
-                <a href="tel:01373454200">01373 454200</a>
-              </p>
-              <p className="contact-info">
-                <strong>Orchardleigh Golf Club:</strong><br />
-                <a href="tel:01373454200">01373 454200</a>
               </p>
             </div>
           </div>
