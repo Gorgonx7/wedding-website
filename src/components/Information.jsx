@@ -16,8 +16,9 @@ function Information() {
                 so please seek alternative accommodation.</strong>
               </p>
               <p>
-                <strong>Wedding Day:</strong> Please arrive at <strong>12:00 PM</strong>.
-                The ceremony will begin at <strong>1:00 PM</strong> at <em>St Mary's Orchardleigh</em>.
+                <strong>Wedding Day:</strong> Arrive at <strong>12:00 PM</strong>, where a coach will take you
+                to <em>St Mary's Church</em>. There is no parking at the church.
+                The ceremony will be at <strong>1:00 PM</strong>.
                 The wedding will end at <strong>4:00 AM</strong>.
               </p>
             </div>
