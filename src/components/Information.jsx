@@ -31,7 +31,7 @@ function Information() {
                 There is enough room at Orchardleigh for everyone to stay.
                 A detailed price list is available for download below.
               </p>
-              
+
               <h4>Check-in & Check-out</h4>
               <p>
                 <strong>Check-in:</strong> 1:00 PM on the day of the wedding<br />
@@ -107,6 +107,11 @@ function Information() {
               <p>
                 <a href="https://www.orchardleigh.net/orchardleigh-house-bedrooms" className="download-link" target="_blank" rel="noopener noreferrer">
                   View Orchardleigh House Bedrooms
+                </a>
+              </p>
+              <p>
+                <a href="https://2b79e79c-5a72-45dc-acb1-582e0bd719df.filesusr.com/ugd/3da331_69660d9fa6ea45cf89035a6d32fbc91f.pdf" className="download-link" target="_blank" rel="noopener noreferrer">
+                  View Floor Plan (PDF)
                 </a>
               </p>
             </div>

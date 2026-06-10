@@ -321,7 +321,7 @@ function RSVPForm() {
 									Please enter your top 3 room choices from the room list provided in the venue information section above.
 								</p>
 								<p className="field-instruction">
-									* Please note the first floor rooms in the main house are unavailable:
+									* Please note the first floor rooms in the central main house listed below are unavailable:
 								</p>
 								<ul className="field-instruction">
 									<li>The Bonita Suite</li>
