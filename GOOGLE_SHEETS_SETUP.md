@@ -20,8 +20,8 @@ This guide will help you set up Google Sheets to receive RSVP form submissions f
    - I1: Room Choice 1
    - J1: Room Choice 2
    - K1: Room Choice 3
-   - L1: Requires Accessible Room
-   - M1: Requires Multiple Rooms
+   - L1: Requires Multiple Rooms
+   - M1: Attend Day Before Meal
    - N1: Flower Preference
    - O1: Dietary Requirements
    - P1: Additional Guests
@@ -76,8 +76,8 @@ function doPost(e) {
       data.roomChoice1 || '',
       data.roomChoice2 || '',
       data.roomChoice3 || '',
-      data.requiresAccessibleRoom ? 'Yes' : 'No',
       data.requiresMultipleRooms ? 'Yes' : 'No',
+      data.attendDayBeforeMeal ? 'Yes' : 'No',
       data.flower || '',
       data.dietaryRequirements || '',
       additionalGuestsText,

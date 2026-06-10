@@ -13,8 +13,8 @@ function RSVPForm() {
 		roomChoice1: '',
 		roomChoice2: '',
 		roomChoice3: '',
-		requiresAccessibleRoom: false,
 		requiresMultipleRooms: false,
+		attendDayBeforeMeal: false,
 		flower: '',
 		dietaryRequirements: '',
 		songSuggestion: '',
@@ -70,7 +70,6 @@ function RSVPForm() {
 				roomChoice1: '',
 				roomChoice2: '',
 				roomChoice3: '',
-				requiresAccessibleRoom: false,
 				requiresMultipleRooms: false
 			}));
 		} else {
@@ -143,8 +142,8 @@ function RSVPForm() {
 				roomChoice1: '',
 				roomChoice2: '',
 				roomChoice3: '',
-				requiresAccessibleRoom: false,
 				requiresMultipleRooms: false,
+				attendDayBeforeMeal: false,
 				flower: '',
 				dietaryRequirements: '',
 				songSuggestion: '',
@@ -353,16 +352,10 @@ function RSVPForm() {
 								</div>
 							</div>
 
-							<div className="form-group checkbox-group">
-								<label className="checkbox-label">
-									<input
-										type="checkbox"
-										name="requiresAccessibleRoom"
-										checked={formData.requiresAccessibleRoom}
-										onChange={handleChange}
-									/>
-									<span>I require an accessible room</span>
-								</label>
+							<div className="form-group">
+								<p className="field-note" style={{marginLeft: 0, fontStyle: 'normal', color: '#555'}}>
+									Please contact James if you require an accessible room.
+								</p>
 							</div>
 
 							<div className="form-group checkbox-group">
@@ -408,6 +401,18 @@ function RSVPForm() {
 							rows="4"
 							placeholder="Please let us know of any dietary requirements or allergies"
 						></textarea>
+					</div>
+
+					<div className="form-group checkbox-group">
+						<label className="checkbox-label">
+							<input
+								type="checkbox"
+								name="attendDayBeforeMeal"
+								checked={formData.attendDayBeforeMeal}
+								onChange={handleChange}
+							/>
+							<span>I would like to attend the meal the day before</span>
+						</label>
 					</div>
 
 					<div className="additional-guests-section">
