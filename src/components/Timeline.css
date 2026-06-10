@@ -17,21 +17,21 @@
 .timeline-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .timeline-box {
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 2rem;
+  padding: 2rem 1.25rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  flex: 0 1 240px;
+  flex: 1 1 0;
 }
 
 .timeline-box:hover {
