@@ -414,3 +414,13 @@
     font-size: 1rem;
   }
 }
+
+.rsvp-closed {
+  text-align: center;
+  color: #333;
+  letter-spacing: 0.05em;
+}
+
+.rsvp-closed p {
+  margin: 0.5rem 0;
+}

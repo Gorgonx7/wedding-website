@@ -11,7 +11,7 @@ function Information() {
               <h3>The Day Before & Day Of</h3>
               <p>
                 <strong>The Day Before:</strong> Join us for a meal at <em>The Peacock Restaurant</em>.
-                <strong>If you would like to attend</strong>, please fill out the RSVP form at the bottom of the page.
+                <strong>If you would like to attend</strong>, please contact the groom on 07950 742403.
                 <strong className="important-note">Please note: it is not possible to stay at the venue the night before, 
                 so please seek alternative accommodation.</strong>
               </p>
